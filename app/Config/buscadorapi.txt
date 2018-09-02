@@ -1,0 +1,18 @@
+buscador api
+
+get provincias
+get ciudad by provincias
+get rubros
+get by find
+	params
+		province_id
+		ciudad_id
+		rubro_id
+		nombre
+
+casos
+	pasa solo ciudad
+	pasa ciudad y rubro
+	pasa ciudad, rubro nombre
+	pasa ciudad, nombre
+	pasa rubro, nombre
