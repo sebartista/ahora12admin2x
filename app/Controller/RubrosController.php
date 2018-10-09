@@ -18,7 +18,9 @@ class RubrosController extends AppController {
 	public $components = array('Paginator', 'Session', 'Flash', 'RequestHandler');
 	public function beforeFilter() {
 		parent::beforeFilter();
-        $this->Auth->allow('get_rubros');
+		$this->Auth->allow('get_rubros');
+		$this->response->header('Access-Control-Allow-Origin','*');
+        $this->response->header('Access-Control-Allow-Methods','*');
     }
 
 /**

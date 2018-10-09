@@ -18,7 +18,9 @@ class ProvinciasController extends AppController {
 	public $components = array('Paginator', 'Session', 'Flash', 'RequestHandler');
 	public function beforeFilter() {
         parent::beforeFilter();
-        $this->Auth->allow('get_provinces');
+		$this->Auth->allow('get_provinces');
+		$this->response->header('Access-Control-Allow-Origin','*');
+        $this->response->header('Access-Control-Allow-Methods','*');
     }
 
 /**

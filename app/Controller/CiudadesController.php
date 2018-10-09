@@ -18,7 +18,9 @@ class CiudadesController extends AppController {
 	public $components = array('Paginator', 'Session', 'Flash', 'RequestHandler');
 	public function beforeFilter(){
 		parent::beforeFilter();
-        $this->Auth->allow('get_by_province');
+		$this->Auth->allow('get_by_province');
+		$this->response->header('Access-Control-Allow-Origin','*');
+        $this->response->header('Access-Control-Allow-Methods','*');
 	}
 
 /**
