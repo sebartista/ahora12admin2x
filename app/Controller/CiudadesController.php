@@ -127,7 +127,7 @@ class CiudadesController extends AppController {
 			$options = array('conditions' => array('Ciudade.' . $this->Ciudade->primaryKey => $id));
 			$this->request->data = $this->Ciudade->find('first', $options);
 		}
-		$provincias = $this->Ciudade->Provincium->find('list');
+		$provincias = $this->Ciudade->Provincia->find('list');
 		$this->set(compact('provincias'));
 	}
 
@@ -151,4 +151,6 @@ class CiudadesController extends AppController {
 		}
 		return $this->redirect(array('action' => 'index'));
 	}
+
+	
 }
