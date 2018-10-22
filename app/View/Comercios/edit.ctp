@@ -1,23 +1,27 @@
 <div class="comercios form">
-<?php echo $this->Form->create('Comercio'); ?>
+<?php echo $this->Form->create('Comercio', ['class' => 'form']); ?>
 	<fieldset>
 		<legend><?php echo __('Edit Comercio'); ?></legend>
 	<?php
+	$options = [
+		'class' => 'form-control',
+		'div'=>'form-group'
+	];
 		echo $this->Form->input('id');
-		echo $this->Form->input('razonsocial');
-		echo $this->Form->input('cuit');
-		echo $this->Form->input('direccion');
-		echo $this->Form->input('codigopostal');
-		echo $this->Form->input('ciudad_id');
-		echo $this->Form->input('sitioweb');
-		echo $this->Form->input('email');
-		echo $this->Form->input('telefono');
-		echo $this->Form->input('nombrefantasia');
-		echo $this->Form->input('activo');
-		echo $this->Form->input('Rubro');
+		echo $this->Form->input('razonsocial', $options);
+		echo $this->Form->input('cuit', $options );
+		echo $this->Form->input('direccion', $options);
+		echo $this->Form->input('codigopostal', $options);
+		echo $this->Form->input('ciudad_id', $options);
+		echo $this->Form->input('sitioweb', $options);
+		echo $this->Form->input('email', $options);
+		echo $this->Form->input('telefono', $options);
+		echo $this->Form->input('nombrefantasia', $options);
+		echo $this->Form->input('activo', $options);
+		echo $this->Form->input('Rubro', $options);
 	?>
 	</fieldset>
-<?php echo $this->Form->end(__('Submit')); ?>
+<?php echo $this->Form->end(__('Aceptar'), ['class'=> 'btn btn-success']); ?>
 </div>
 <div class="actions">
 	<h3><?php echo __('Actions'); ?></h3>

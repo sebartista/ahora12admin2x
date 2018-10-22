@@ -149,8 +149,9 @@ class ComerciosController extends AppController {
 			$options = array('conditions' => array('Comercio.' . $this->Comercio->primaryKey => $id));
 			$this->request->data = $this->Comercio->find('first', $options);
 		}
-		$ciudads = $this->Comercio->Ciudad->find('list');
-		$this->set(compact('ciudads'));
+		$ciudads = $this->Comercio->Ciudade->find('list');
+		$rubros = $this->Comercio->Rubro->find('list');
+		$this->set(compact('ciudads', 'rubros'));
 	}
 
 /**
