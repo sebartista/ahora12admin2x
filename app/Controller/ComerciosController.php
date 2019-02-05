@@ -89,6 +89,9 @@ class ComerciosController extends AppController {
  * @return void
  */
 	public function index() {
+            $this->Paginator->settings = array(
+                'conditions' => array('Comercio.activo' => 't')
+            );
 		$this->Comercio->recursive = 0;
 		$this->set('comercios', $this->Paginator->paginate());
 	}
