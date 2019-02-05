@@ -13,7 +13,7 @@ class ComercioTest extends CakeTestCase {
  */
 	public $fixtures = array(
 		'app.comercio',
-		'app.ciudad'
+		'app.ciudade'
 	);
 
 /**
@@ -36,5 +36,11 @@ class ComercioTest extends CakeTestCase {
 
 		parent::tearDown();
 	}
+        
+        public function testUpdateComerceFromCsv(){
+            $result = $this->Comercio->updateComerceFromCsv();
+            $expected = false;
+            $this->assertEquals($expected, $result);
+        }
 
 }

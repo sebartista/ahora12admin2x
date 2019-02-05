@@ -68,4 +68,8 @@ class Comercio extends AppModel {
     public function ahoraEvalQueryData($i){
         return $i;
     }
+    
+    public function updateComerceFromCsv(){
+        return false;
+    }
 }
