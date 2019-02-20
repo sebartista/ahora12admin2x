@@ -36,7 +36,7 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 	?>
 </head>
 <body>
-	<div id="container" class="container">
+	<div id="container" class="container-fluid">
 		
 		<div id="content" class="col-lg-12">
 

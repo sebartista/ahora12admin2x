@@ -1,2 +1,5 @@
-<?php echo json_decode($ciudad); 	?>
+<?php echo json_decode($ciudad); 
+
+
+
 

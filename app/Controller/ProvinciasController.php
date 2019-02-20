@@ -40,7 +40,9 @@ class ProvinciasController extends AppController {
 
 	public function get_provinces() {
 		$this->Provincia->recursive = 0;
-		$provincias = $this->Provincia->find('all');
+		$provincias = $this->Provincia->find('all', array(
+                    'order' => array('nombre' => 'ASC')
+                ));
 		$this->set(
 			array(
 			 	'provincias' => $provincias,
