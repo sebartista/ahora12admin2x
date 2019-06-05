@@ -1,16 +1,26 @@
 <div class="rubros form">
-<?php echo $this->Form->create('Rubro', array('class' => 'form')); ?>
+<?php echo $this->Form->create('Rubro', array('class' => 'form','inputDefaults' => array(
+		'div' => 'form-group',
+		'wrapInput' => false,
+		'class' => 'form-control'
+	))); ?>
+
 	<fieldset>
 		<legend><?php echo __('Edit Rubro'); ?></legend>
-		<div class='form-group'>
+		
 	<?php
 		echo $this->Form->input('id', array('class'=>'form-control'));
 		echo $this->Form->input('nombre', array('class'=>'form-control'));
 		echo $this->Form->input('programa', array('class'=>'form-control'));
 	?>
-</div>
+
 	</fieldset>
-<?php echo $this->Form->end(__('Submit')); ?>
+		<?php echo $this->Form->submit(__('Submit'), array(
+			'div' => 'form-group',
+			'class' => 'btn btn-info'
+		)); ?>
+
+		<?php echo $this->Form->end();?>
 </div>
 <div class="actions">
 	<h3><?php echo __('Actions'); ?></h3>
