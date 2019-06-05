@@ -9,11 +9,25 @@ class TransactionIntegrationShell extends AppShell {
     
     public function check_existing_records() {
         $this->stdout->styles('flashy', array('text' => 'magenta', 'blink' => true));
+// Condiciones insert
+        //si no existe el cuit
+    //si existe
+        // revisar rubro    
+        // revisar direccion
+        // revisar codigo postal
+        //si direccion y codigopostal y rubro
+            //no  hacer nada
+        //si direccion y codigo postal
+            //agregar rubro
+        //si codigo postal (significa que es el mismo rubro en misma ubicacion)
+            //ignorar
+        //si diferente codigopostal 
+            //nueva direccion
 
 
         $this->out('<flashy>working</flashy>');
-        $dir = new Folder('C:\Users\SEBA\Downloads\Ahora12', false);        
-        $file = new File($dir->pwd().'\comercios2018-2019.csv', false);
+        $dir = new Folder('C:\Users\sebar\Downloads\ahora12', false);        
+        $file = new File($dir->pwd().'\comercios_junio2018-2019.csv', false);
         
         $file->open('r');
         //$contents = $file->read();
@@ -23,7 +37,7 @@ class TransactionIntegrationShell extends AppShell {
             $exploded = explode("|", $line);
             $cuit = $exploded[0];
             $first = $this->Comercio->find('first', array(
-                'conditions' => array('Comercio.cuit' => $cuit)
+                'conditions' => array('Comercio.cuit' => $cuit, 'Comercio.activo' => 't')
             ));
             if($first){
                 $this->out("encontre comercio ".$cuit. " - total ".$find_counter);

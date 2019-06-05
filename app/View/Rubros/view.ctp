@@ -11,6 +11,11 @@
 			<?php echo h($rubro['Rubro']['nombre']); ?>
 			&nbsp;
 		</dd>
+		<dt><?php echo __('Programa'); ?></dt>
+		<dd>
+			<?php echo h($rubro['Rubro']['programa']); ?>
+			&nbsp;
+		</dd>
 	</dl>
 </div>
 <div class="actions">

@@ -5,6 +5,7 @@
 	<tr>
 			<th><?php echo $this->Paginator->sort('id'); ?></th>
 			<th><?php echo $this->Paginator->sort('nombre'); ?></th>
+			<th><?php echo $this->Paginator->sort('programa'); ?></th>
 			<th class="actions"><?php echo __('Actions'); ?></th>
 	</tr>
 	</thead>
@@ -13,6 +14,7 @@
 	<tr>
 		<td><?php echo h($rubro['Rubro']['id']); ?>&nbsp;</td>
 		<td><?php echo h($rubro['Rubro']['nombre']); ?>&nbsp;</td>
+		<td><?php echo h($rubro['Rubro']['programa']); ?>&nbsp;</td>
 		<td class="actions">
 			<?php echo $this->Html->link(__('View'), array('action' => 'view', $rubro['Rubro']['id'])); ?>
 			<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $rubro['Rubro']['id'])); ?>

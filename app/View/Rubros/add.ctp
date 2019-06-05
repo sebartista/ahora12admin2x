@@ -4,6 +4,7 @@
 		<legend><?php echo __('Add Rubro'); ?></legend>
 	<?php
 		echo $this->Form->input('nombre');
+		echo $this->Form->input('programa');
 	?>
 	</fieldset>
 <?php echo $this->Form->end(__('Submit')); ?>

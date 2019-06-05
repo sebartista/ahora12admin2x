@@ -10,10 +10,9 @@
 </div>
 <div class="comercios index col-lg-10">
 	<h2><?php echo __('Comercios'); ?></h2>
-	<table cellpadding="0" cellspacing="0" class="table">
+	<table class="table table-condensed">
 	<thead>
 	<tr>
-<!--			<th><?php echo $this->Paginator->sort('id'); ?></th>-->
 			<th><?php echo $this->Paginator->sort('razonsocial'); ?></th>
 			<th><?php echo $this->Paginator->sort('cuit'); ?></th>
 			<th><?php echo $this->Paginator->sort('direccion'); ?></th>
@@ -22,8 +21,6 @@
 			<th><?php echo $this->Paginator->sort('sitioweb'); ?></th>
 			<th><?php echo $this->Paginator->sort('email'); ?></th>
 			<th><?php echo $this->Paginator->sort('telefono'); ?></th>
-<!--			<th><?php echo $this->Paginator->sort('created'); ?></th>-->
-<!--			<th><?php echo $this->Paginator->sort('updated'); ?></th>-->
 			<th><?php echo $this->Paginator->sort('nombrefantasia'); ?></th>
 			<th><?php echo $this->Paginator->sort('activo'); ?></th>
 			<th class="actions"><?php echo __('Actions'); ?></th>
@@ -32,7 +29,6 @@
 	<tbody>
 	<?php foreach ($comercios as $comercio): ?>
 	<tr>
-<!--		<td><?php echo h($comercio['Comercio']['id']); ?>&nbsp;</td>-->
 		<td><?php echo h($comercio['Comercio']['razonsocial']); ?>&nbsp;</td>
 		<td><?php echo h($comercio['Comercio']['cuit']); ?>&nbsp;</td>
 		<td><?php echo h($comercio['Comercio']['direccion']); ?>&nbsp;</td>
@@ -43,8 +39,6 @@
 		<td><?php echo h($comercio['Comercio']['sitioweb']); ?>&nbsp;</td>
 		<td><?php echo h($comercio['Comercio']['email']); ?>&nbsp;</td>
 		<td><?php echo h($comercio['Comercio']['telefono']); ?>&nbsp;</td>
-<!--		<td><?php echo h($comercio['Comercio']['created']); ?>&nbsp;</td>-->
-<!--		<td><?php echo h($comercio['Comercio']['updated']); ?>&nbsp;</td>-->
 		<td><?php echo h($comercio['Comercio']['nombrefantasia']); ?>&nbsp;</td>
 		<td><?php echo h($comercio['Comercio']['activo']); ?>&nbsp;</td>
 		<td class="actions">
