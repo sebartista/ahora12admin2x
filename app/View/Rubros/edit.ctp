@@ -1,12 +1,14 @@
 <div class="rubros form">
-<?php echo $this->Form->create('Rubro'); ?>
+<?php echo $this->Form->create('Rubro', array('class' => 'form')); ?>
 	<fieldset>
 		<legend><?php echo __('Edit Rubro'); ?></legend>
+		<div class='form-group'>
 	<?php
-		echo $this->Form->input('id');
-		echo $this->Form->input('nombre');
-		echo $this->Form->input('programa');
+		echo $this->Form->input('id', array('class'=>'form-control'));
+		echo $this->Form->input('nombre', array('class'=>'form-control'));
+		echo $this->Form->input('programa', array('class'=>'form-control'));
 	?>
+</div>
 	</fieldset>
 <?php echo $this->Form->end(__('Submit')); ?>
 </div>

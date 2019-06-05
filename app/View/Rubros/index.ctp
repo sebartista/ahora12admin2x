@@ -1,6 +1,12 @@
+<div class="actions">
+	<h3><?php echo __('Actions'); ?></h3>
+	<ul>
+		<li><?php echo $this->Html->link(__('New Rubro'), array('action' => 'add')); ?></li>
+	</ul>
+</div>
 <div class="rubros index">
 	<h2><?php echo __('Rubros'); ?></h2>
-	<table cellpadding="0" cellspacing="0" class="table">
+	<table class="table table-condensed">
 	<thead>
 	<tr>
 			<th><?php echo $this->Paginator->sort('id'); ?></th>
@@ -38,9 +44,4 @@
 	?>
 	</div>
 </div>
-<div class="actions">
-	<h3><?php echo __('Actions'); ?></h3>
-	<ul>
-		<li><?php echo $this->Html->link(__('New Rubro'), array('action' => 'add')); ?></li>
-	</ul>
-</div>
+
