@@ -58,12 +58,16 @@ class Ciudade extends AppModel {
     }
 
     public function getByProvince($province_id) {
-        return  $this->find('all', array(
+        $c = $this->find('all', array(
             'conditions' => array('Ciudade.provincia_id' => $province_id),
             'fields' => array('Ciudade.nombre'),
             'recursive' => 0,
             'order' => array('Ciudade.nombre' => 'ASC')
         ));
+        foreach ($c as &$cn) {
+           $cn['Ciudade']['nombre'] = ucwords(strtolower($cn['Ciudade']['nombre']));
+        }
+        return $c;
     }
 
 }

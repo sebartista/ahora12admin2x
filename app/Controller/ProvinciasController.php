@@ -43,6 +43,9 @@ class ProvinciasController extends AppController {
 		$provincias = $this->Provincia->find('all', array(
                     'order' => array('nombre' => 'ASC')
                 ));
+                foreach ($provincias as &$p) {
+                  $p['Provincia']['nombre'] = ucwords(strtolower($p['Provincia']['nombre']));
+                }
 		$this->set(
 			array(
 			 	'provincias' => $provincias,

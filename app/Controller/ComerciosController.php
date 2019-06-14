@@ -66,6 +66,11 @@ class ComerciosController extends AppController {
             foreach ($comercios as &$c) {
                 unset($c['Ciudade']['id']);
                 unset($c['Ciudade']['provincia_id']);
+                $c['Ciudade']['nombre'] = ucwords(strtolower($c['Ciudade']['nombre']));
+                $c['Comercio']['nombrefantasia'] = ucwords(strtolower($c['Comercio']['nombrefantasia']));
+                $c['Comercio']['razonsocial'] = ucwords(strtolower($c['Comercio']['razonsocial']));
+                $c['Comercio']['direccion'] = ucwords(strtolower($c['Comercio']['direccion']));
+                
                 foreach ($c['Rubro'] as &$r) {
                     unset($r['RubroComercio']);
                     unset($r['id']);
