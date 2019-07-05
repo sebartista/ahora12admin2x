@@ -1,5 +1,20 @@
-<div class="comercios view">
+<div class="actions col-lg-12">
+	<h5><?php echo __('Actions'); ?></h5>
+	<ul class="nav nav-pills">
+		<li><?php echo $this->Html->link(__('Edit Comercio'), array('action' => 'edit', $comercio['Comercio']['id'])); ?> </li>
+		<li><?php echo $this->Form->postLink(__('Delete Comercio'), array('action' => 'delete', $comercio['Comercio']['id']), array('confirm' => __('Are you sure you want to delete # %s?', $comercio['Comercio']['id']))); ?> </li>
+		<li><?php echo $this->Html->link(__('List Comercios'), array('action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('New Comercio'), array('action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('List Ciudades'), array('controller' => 'ciudades', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('New Ciudade'), array('controller' => 'ciudades', 'action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('List Rubros'), array('controller' => 'rubros', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('New Rubro'), array('controller' => 'rubros', 'action' => 'add')); ?> </li>
+	</ul>
+</div>
+<div class="comercios view col-lg-12">
 <h2><?php echo __('Comercio'); ?></h2>
+</div>
+<div class="col-lg-3">
 	<dl>
 		<dt><?php echo __('Id'); ?></dt>
 		<dd>
@@ -16,6 +31,10 @@
 			<?php echo h($comercio['Comercio']['cuit']); ?>
 			&nbsp;
 		</dd>
+	</dl>
+	</div>
+	<div class="col-lg-3">
+	<dl>
 		<dt><?php echo __('Direccion'); ?></dt>
 		<dd>
 			<?php echo h($comercio['Comercio']['direccion']); ?>
@@ -31,6 +50,10 @@
 			<?php echo $this->Html->link($comercio['Ciudade']['nombre'], array('controller' => 'ciudades', 'action' => 'view', $comercio['Ciudade']['id'])); ?>
 			&nbsp;
 		</dd>
+		</dl>
+	</div>
+	<div class="col-lg-3">
+	<dl>
 		<dt><?php echo __('Sitioweb'); ?></dt>
 		<dd>
 			<?php echo h($comercio['Comercio']['sitioweb']); ?>
@@ -51,6 +74,10 @@
 			<?php echo h($comercio['Comercio']['created']); ?>
 			&nbsp;
 		</dd>
+		</dl>
+	</div>
+	<div class="col-lg-3">
+	<dl>
 		<dt><?php echo __('Updated'); ?></dt>
 		<dd>
 			<?php echo h($comercio['Comercio']['updated']); ?>
@@ -68,23 +95,11 @@
 		</dd>
 	</dl>
 </div>
-<div class="actions">
-	<h3><?php echo __('Actions'); ?></h3>
-	<ul>
-		<li><?php echo $this->Html->link(__('Edit Comercio'), array('action' => 'edit', $comercio['Comercio']['id'])); ?> </li>
-		<li><?php echo $this->Form->postLink(__('Delete Comercio'), array('action' => 'delete', $comercio['Comercio']['id']), array('confirm' => __('Are you sure you want to delete # %s?', $comercio['Comercio']['id']))); ?> </li>
-		<li><?php echo $this->Html->link(__('List Comercios'), array('action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Comercio'), array('action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Ciudades'), array('controller' => 'ciudades', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Ciudade'), array('controller' => 'ciudades', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Rubros'), array('controller' => 'rubros', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Rubro'), array('controller' => 'rubros', 'action' => 'add')); ?> </li>
-	</ul>
-</div>
-<div class="related">
+
+<div class="related col-lg-12">
 	<h3><?php echo __('Related Rubros'); ?></h3>
 	<?php if (!empty($comercio['Rubro'])): ?>
-	<table cellpadding = "0" cellspacing = "0">
+	<table class="table table-condensed">
 	<tr>
 		<th><?php echo __('Id'); ?></th>
 		<th><?php echo __('Nombre'); ?></th>
@@ -104,8 +119,8 @@
 	</table>
 <?php endif; ?>
 
-	<div class="actions">
-		<ul>
+	<div class="actions col-lg-12">
+		<ul class="nav nav-pills">
 			<li><?php echo $this->Html->link(__('New Rubro'), array('controller' => 'rubros', 'action' => 'add')); ?> </li>
 		</ul>
 	</div>

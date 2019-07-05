@@ -67,17 +67,23 @@ class CiudadesController extends AppController {
         if (!$this->Ciudade->exists($id)) {
             throw new NotFoundException(__('Invalid ciudade'));
         }
-        $options = array('conditions' => array('Ciudade.' . $this->Ciudade->primaryKey => $id));
+        $options = array(
+            'conditions' => array('Ciudade.' . $this->Ciudade->primaryKey => $id)
+            );
         $ciudad = $this->Ciudade->find('first', $options);
+        /*
         $comercios = $this->Ciudade->Comercio->find('all', array(
             'conditions' => array(
                 'Comercio.ciudad_id' => $id
-            )
+            ),
+            'order' => array('Comercio.nombrefantasia DESC'),
+            'fields' => array('Comercio.id', 'Comercio.nombrefantasia')
                 )
         );
+        */
         $this->set(array(
             'ciudade' => $ciudad,
-            'comercios' => $comercios
+            //'comercios' => $comercios
         ));
         //$this->set('ciudade', $this->Ciudade->find('first', $options));
     }

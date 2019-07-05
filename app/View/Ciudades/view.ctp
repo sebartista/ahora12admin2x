@@ -1,3 +1,14 @@
+<div class="actions col-lg-12">
+	<h5><?php echo __('Actions'); ?></h5>
+	<ul class="nav nav-pills">
+		<li><?php echo $this->Html->link(__('Edit Ciudade'), array('action' => 'edit', $ciudade['Ciudade']['id'])); ?> </li>
+		<li><?php echo $this->Form->postLink(__('Delete Ciudade'), array('action' => 'delete', $ciudade['Ciudade']['id']), array('confirm' => __('Are you sure you want to delete # %s?', $ciudade['Ciudade']['id']))); ?> </li>
+		<li><?php echo $this->Html->link(__('List Ciudades'), array('action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('New Ciudade'), array('action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('List Provincias'), array('controller' => 'provincias', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('New Provincia'), array('controller' => 'provincias', 'action' => 'add')); ?> </li>
+	</ul>
+</div>
 <div class="ciudades view">
 <h2><?php echo __('Ciudade'); ?></h2>
 	<dl>
@@ -19,26 +30,16 @@
 	</dl>
 </div>
 
-<div class="actions">
-	<h3><?php echo __('Actions'); ?></h3>
-	<ul>
-		<li><?php echo $this->Html->link(__('Edit Ciudade'), array('action' => 'edit', $ciudade['Ciudade']['id'])); ?> </li>
-		<li><?php echo $this->Form->postLink(__('Delete Ciudade'), array('action' => 'delete', $ciudade['Ciudade']['id']), array('confirm' => __('Are you sure you want to delete # %s?', $ciudade['Ciudade']['id']))); ?> </li>
-		<li><?php echo $this->Html->link(__('List Ciudades'), array('action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Ciudade'), array('action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Provincias'), array('controller' => 'provincias', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Provincia'), array('controller' => 'provincias', 'action' => 'add')); ?> </li>
-	</ul>
-</div>
 
 
-<div class="related">
-	<h3><?php echo __('Related Comercios'); ?></h3>
+
+<div class="related col-lg-12">
+	<h5><?php echo __('Related Comercios'); ?></h5>
 	<?php if (!empty($ciudade['Comercio'])): ?>
-	<table cellpadding = "0" cellspacing = "0" class="table">
+	<table class="table table-condensed">
 	<tr>
 		<th><?php echo __('Id'); ?></th>		
-		<th><?php echo __('Nombre'); ?></th>
+		<th><?php echo __('Nombre Fantasia'); ?></th>
 		<th class="actions"><?php echo __('Actions'); ?></th>
 	</tr>
 	<?php foreach ($ciudade['Comercio'] as $comercio): ?>
