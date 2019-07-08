@@ -29,6 +29,7 @@ class TryDuplicatesShell extends AppShell {
             $duplicates = $this->Comercio->find('all', array(
                 'conditions' => array(
                     'Comercio.id !=' => $comercio['Comercio']['id'],
+                    'Comercio.cuit' => $comercio['Comercio']['cuit'],
                     'Comercio.ciudad_id' => $comercio['Comercio']['ciudad_id'],
                     'Comercio.codigopostal' => $comercio['Comercio']['codigopostal'],
                     'Comercio.direccion' => $comercio['Comercio']['direccion']
