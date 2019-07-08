@@ -7,7 +7,7 @@ class TryDuplicatesShell extends AppShell {
     private $counter = 0;
     
     public function main() {
-        $comercios_count = $this->Comercios->find('count');
+        $comercios_count = $this->Comercio->find('count');
         while($this->counter < $comercios_count){
             $this->getDuplicates();
             $this->counter++;
