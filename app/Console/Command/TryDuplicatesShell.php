@@ -4,10 +4,15 @@ class TryDuplicatesShell extends AppShell {
 
     private $ids_revisados = array();
     public $uses = array('Comercio');
-
+    private $counter = 0;
+    
     public function main() {
-
-        $this->getDuplicates();
+        $comercios_count = $this->Comercios->find('count');
+        while($this->counter < $comercios_count){
+            $this->getDuplicates();
+            $this->counter++;
+        }
+        
     }
 
     private function getDuplicates() {
@@ -34,7 +39,7 @@ class TryDuplicatesShell extends AppShell {
             }
 
             $this->ids_revisados[] = $comercio['Comercio']['id'];
-            $this->getDuplicates();
+            
         }
     }
 
