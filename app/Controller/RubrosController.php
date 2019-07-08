@@ -56,7 +56,8 @@ class RubrosController extends AppController {
 		}
 		//$options = array('conditions' => array('Rubro.' . $this->Rubro->primaryKey => $id));		
 		//$this->set('rubro', $this->Rubro->find('first', $options));
-		$rubro = $this->Rubro->find('first', array('conditions' => array('Rubro.id' => $id)));
+		$rubro = $this->Rubro->find('first', 
+			array('conditions' => array('Rubro.id' => $id)));
 		$this->set(
 			array(
 				'rubro' => $rubro,

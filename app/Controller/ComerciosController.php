@@ -97,7 +97,7 @@ class ComerciosController extends AppController {
             'conditions' => array('Comercio.activo' => 't'),
             'order' => array('Comercio.nombrefantasia' => 'ASC')
         );
-        $this->Comercio->recursive = 0;
+        $this->Comercio->recursive = 1;
         $this->set('comercios', $this->Paginator->paginate());
     }
 
