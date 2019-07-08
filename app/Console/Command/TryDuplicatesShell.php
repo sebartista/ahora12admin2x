@@ -24,6 +24,7 @@ class TryDuplicatesShell extends AppShell {
             'recursive' => 0
         ));
         if ($comercio) {
+            
             $duplicates = $this->Comercio->find('all', array(
                 'conditions' => array(
                     'Comercio.id !=' => $comercio['Comercio']['id'],
@@ -34,6 +35,7 @@ class TryDuplicatesShell extends AppShell {
                 'order' => array('Comercio.id ASC')
             ));
             if (count($duplicates) > 1) {
+                $this->out('<info> ID principal '.$comercio['Comercio']['id']);
                 $this->out('<info>encontre </info>' . count($duplicates));
                 $this->desactivarDuplicados($duplicates);
             }
