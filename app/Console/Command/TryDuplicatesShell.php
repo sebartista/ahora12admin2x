@@ -37,7 +37,7 @@ class TryDuplicatesShell extends AppShell {
                 'recursive' => 0
                 //'order' => array('Comercio.id ASC')
             ));
-            if (count($duplicates) > 1) {
+            if (count($duplicates) >= 1) {
                 //$this->out('<info> ID principal '.$comercio['Comercio']['id']);
                 $this->out('<info>encontre </info>' . count($duplicates));
                 if(count($this->ids_desactivar) > 1000){
