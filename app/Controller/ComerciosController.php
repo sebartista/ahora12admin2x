@@ -50,9 +50,10 @@ class ComerciosController extends AppController {
                         'type' => 'INNER',
                         'conditions' => array(
                             'Comercio.id = RubroComercio.comercio_id',
+                            'RubroComercio.rubro_id' =>$this->request->query['rubro_id']
                         )
                     ));
-                $options['conditions']['RubroComercio.rubro_id'] = $this->Comercio->ahoraEvalQueryData($this->request->query['rubro_id']);
+                //$options['conditions']['RubroComercio.rubro_id'] = $this->Comercio->ahoraEvalQueryData($this->request->query['rubro_id']);
             }
 
             $options['conditions']['Comercio.activo'] = true;
@@ -71,9 +72,14 @@ class ComerciosController extends AppController {
                 $c['Comercio']['razonsocial'] = ucwords(strtolower($c['Comercio']['razonsocial']));
                 $c['Comercio']['direccion'] = ucwords(strtolower($c['Comercio']['direccion']));
                 
+
                 foreach ($c['Rubro'] as &$r) {
                     unset($r['RubroComercio']);
                     unset($r['id']);
+                }
+                if(empty($c['Rubro'])){
+                    $c['Rubro']['programa'] = "";
+                    $c['Rubro']['nombre'] = "-";
                 }
             }
             $this->set(
@@ -86,6 +92,8 @@ class ComerciosController extends AppController {
             throw new NotFoundException(__('Datos incorrectos'));
         }
     }
+
+
 
     /**
      * index method
