@@ -78,8 +78,8 @@ class ComerciosController extends AppController {
                     unset($r['id']);
                 }
                 if(empty($c['Rubro'])){
-                    $c['Rubro']['programa'] = "";
-                    $c['Rubro']['nombre'] = "-";
+                    $c['Rubro'][0]['programa'] = "";
+                    $c['Rubro'][0]['nombre'] = "-";
                 }
             }
             $this->set(
